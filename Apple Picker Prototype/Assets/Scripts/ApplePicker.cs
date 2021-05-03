@@ -16,10 +16,10 @@ public class ApplePicker : MonoBehaviour
         basketList = new List<GameObject>();
         for (int i=0; i<numBaskets; i++)
         {
-            GameObject tBasketGo = Instantiate<GameObject>(basketPrefab);
+            GameObject tBasketGO = Instantiate<GameObject>(basketPrefab);
             Vector3 pos = Vector3.zero;
             pos.y = basketBottomY + (basketSpacingY * i);
-            tBasketGo.transform.position = pos;
+            tBasketGO.transform.position = pos;
             basketList.Add(tBasketGO);
         }
     }
@@ -32,7 +32,7 @@ public class ApplePicker : MonoBehaviour
             Destroy(tGO);
             if (basketList.Count == 0)
             {
-                SceneManager.LoadScene("_Scene_0");
+                SceneManager.LoadScene("GameOver");
             }
         }
         int basketIndex = basketList.Count - 1;
